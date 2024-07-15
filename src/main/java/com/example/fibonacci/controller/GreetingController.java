@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GreetingController {
     @GetMapping("/greeting")
     @ResponseBody
-    public String greeting() {
-        return "greeting";
+    public String greeting( @RequestParam(name = "dato1", required = false) String dato1,
+            @RequestParam(name = "dato2", required = false) String dato2) {
+
+        return "greeting" + " " +dato1 +" "+ dato2;
     }
 }
