@@ -3,6 +3,7 @@ package com.example.fibonacci.controller;
 import com.example.fibonacci.domain.model.Serie;
 import com.example.fibonacci.provider.SerieService;
 import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 @Controller
 public class GreetingController {
@@ -53,19 +55,29 @@ public class GreetingController {
             String resultado = printDescendingFibonacciSeries(x, y, seconds);
             LocalTime currentTime = LocalTime.now();
 
+            //gguarda la serie generada en base de datos con la hora actual
+
             Serie ser = new Serie();
             ser.setSerie(resultado);
             ser.setHoraActual(currentTime.toString());
-            serieService.saveSerie(ser);
+            serieService.saveSerie(ser); //guardaddo
 
-            /*
-            String destinatario = "villaramirezc@gmail.com";
+            Properties props = new Properties();
+            props.put("mail.transport.protocol", "smtp");
+            props.put("mail.smtp.connectiontimeout", "10000");
+            props.put("mail.smtp.timeout", "20000");
+            props.put("mail.smtp.quitwait", "false");
+            props.put("mail.smtp.auth", "false");
+            props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.debug", "true");
+            String destinatario = "connievilla99@hotmail.com";
+            Session session = Session.getInstance(props, null);
             try {
                 sendEmail(destinatario, "Serie Generada", "La serie generada es: " + resultado + " a la hora: " + currentTime.toString());
             } catch (MessagingException e) {
                 e.printStackTrace();
                 return new ResponseEntity<>("Error enviando email", HttpStatus.INTERNAL_SERVER_ERROR);
-            }*/
+            }
 
             return new ResponseEntity<>(resultado, HttpStatus.OK);
 

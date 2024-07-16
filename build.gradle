@@ -28,7 +28,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '3.3.1'
 	implementation 'org.springframework.boot:spring-boot-starter-mail' // Dependencia para correo en Spring Boot
-	implementation 'com.sun.mail:jakarta.mail:1.6.7' // Dependencia para Jakarta Mail
+	implementation 'com.sun.mail:jakarta.mail:2.0.1' // Dependencia para Jakarta Mail
 
 }
 

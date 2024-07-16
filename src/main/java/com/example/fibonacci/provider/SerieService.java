@@ -9,6 +9,8 @@ import java.util.Optional;
 
 @Service
 public class SerieService {
+
+    //Service de springboot encargado del crud
     @Autowired
     private SerieRepository serieRepository;
 
