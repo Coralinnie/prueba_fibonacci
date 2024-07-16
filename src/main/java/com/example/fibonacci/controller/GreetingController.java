@@ -70,7 +70,7 @@ public class GreetingController {
             props.put("mail.smtp.auth", "false");
             props.put("mail.smtp.starttls.enable", "true");
             props.put("mail.debug", "true");
-            String destinatario = "connievilla99@hotmail.com";
+            String destinatario = "correalondon@gmail.com";
             Session session = Session.getInstance(props, null);
             try {
                 sendEmail(destinatario, "Serie Generada", "La serie generada es: " + resultado + " a la hora: " + currentTime.toString());
