@@ -25,7 +25,7 @@ public class MailConfig {
         props.put("mail.smtp.connectiontimeout", "10000");
         props.put("mail.smtp.timeout", "20000");
         props.put("mail.smtp.quitwait", "false");
-        props.put("mail.smtp.auth", "false");
+        props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.debug", "true");
 

@@ -61,7 +61,7 @@ public class GreetingController {
             ser.setSerie(resultado);
             ser.setHoraActual(currentTime.toString());
             serieService.saveSerie(ser); //guardaddo
-
+/*
             Properties props = new Properties();
             props.put("mail.transport.protocol", "smtp");
             props.put("mail.smtp.connectiontimeout", "10000");
@@ -70,6 +70,7 @@ public class GreetingController {
             props.put("mail.smtp.auth", "false");
             props.put("mail.smtp.starttls.enable", "true");
             props.put("mail.debug", "true");
+
             String destinatario = "correalondon@gmail.com";
             Session session = Session.getInstance(props, null);
             try {
@@ -78,7 +79,7 @@ public class GreetingController {
                 e.printStackTrace();
                 return new ResponseEntity<>("Error enviando email", HttpStatus.INTERNAL_SERVER_ERROR);
             }
-
+*/
             return new ResponseEntity<>(resultado, HttpStatus.OK);
 
 
