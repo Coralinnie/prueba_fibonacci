@@ -22,6 +22,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+	compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '3.3.1'
+	implementation 'org.springframework.boot:spring-boot-starter-mail' // Dependencia para correo en Spring Boot
+	implementation 'com.sun.mail:jakarta.mail:1.6.7' // Dependencia para Jakarta Mail
+
 }
 
 tasks.named('test') {
